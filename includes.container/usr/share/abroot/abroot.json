@@ -5,7 +5,7 @@
   "registry": "ghcr.io",
   "registryService": "registry.ghcr.io",
   "registryAPIVersion": "v2",
-  "name": "vanilla-flavors/gnome-china",
+  "name": "vanilla-flavors/kde-china",
   "tag": "latest",
 
   "iPkgMngPre": "lpkg --unlock",

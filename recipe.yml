@@ -1,13 +1,13 @@
-name: Vanilla Desktop China
-id: china
+name: Vanilla KDE China
+id: kde-china
 vibversion: 1.1.0
 
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/gnome:latest
+  base: ghcr.io/vanilla-kde/kde:dev
   singlelayer: false
   labels:
-    maintainer: lmmqxyx404
+    maintainer: FangcatChina
   args:
     DEBIAN_FRONTEND: noninteractive
   runs:
@@ -31,8 +31,10 @@ stages:
     type: apt
     sources:
       - packages:
-        - ibus-libpinyin
-        - ibus-rime
+        - fcitx5
+        - fcitx5-frontend-qt6
+        - fcitx5-pinyin-zhwiki
+        - fcitx5-rime
 
   - name: patch-flatpak-first-setup-remote
     type: shell

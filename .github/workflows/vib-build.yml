@@ -21,7 +21,7 @@ jobs:
     - name: Verify Base Image Integrity
       if: ${{ github.ref_type == 'tag' }}
       run:
-        gh attestation verify oci://ghcr.io/vanilla-os/gnome:latest --owner Vanilla-OS
+        gh attestation verify oci://ghcr.io/vanilla-kde/kde:latest --owner Vanilla-KDE
       env:
         GH_TOKEN: ${{ github.token }}
 
@@ -33,23 +33,14 @@ jobs:
           - amd64
           - arm64
         image_name:
-          - gnome-china
-          - gnome-nvidia-china
-          - gnome-nvidia-modern-china
-          - gnome-vm-china
+          - kde-china
         include:
           - runner: ubuntu-latest
             arch: amd64
           - runner: ubuntu-24.04-arm
             arch: arm64
-          - base_image: ghcr.io/vanilla-os/gnome
-            image_name: gnome-china
-          - base_image: ghcr.io/vanilla-os/gnome-nvidia
-            image_name: gnome-nvidia-china
-          - base_image: ghcr.io/vanilla-os/gnome-nvidia-modern
-            image_name: gnome-nvidia-modern-china
-          - base_image: ghcr.io/vanilla-os/gnome-vm
-            image_name: gnome-vm-china
+          - base_image: ghcr.io/vanilla-kde/kde
+            image_name: kde-china
     runs-on: ${{ matrix.runner }}
     needs: verify-image
     permissions:
@@ -70,7 +61,7 @@ jobs:
           TAG="${{ github.ref_name }}"
         fi
         sed -i "s|^  base:.*|  base: ${{ matrix.base_image }}:$TAG|" recipe.yml
-        sed -i 's|"name": ".*"|"name": "vanilla-flavors/${{ matrix.image_name }}"|' includes.container/usr/share/abroot/abroot.json
+        sed -i 's|"name": ".*"|"name": "vanilla-kde/${{ matrix.image_name }}"|' includes.container/usr/share/abroot/abroot.json
 
     - uses: vanilla-os/vib-gh-action@v1.1.0
       with:
@@ -158,10 +149,7 @@ jobs:
       fail-fast: false
       matrix:
         image_name:
-          - gnome-china
-          - gnome-nvidia-china
-          - gnome-nvidia-modern-china
-          - gnome-vm-china
+          - kde-china
     permissions:
       contents: write # Allow actions to create release
       packages: write # Allow pushing images to GHCR
