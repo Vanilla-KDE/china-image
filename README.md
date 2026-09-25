@@ -1,9 +1,9 @@
-# Vanilla OS KDE 中国镜像
+# Vanilla OS Kipferl 中国镜像
 
-用于构建 Vanilla OS KDE 中国镜像的 Containerfile。
+用于构建 Vanilla OS Kipferl 中国镜像的 Containerfile。
 
 > [!CAUTION]
-> KDE 镜像不由 Vanilla OS 官方维护。
+> Kipferl 镜像不由 Vanilla OS 官方维护。
 >
 > 该镜像目前仍处于开发状态，不建议在生产环境中使用。
 
@@ -14,7 +14,7 @@
 ## 所应用的更改
 
 - 预置 GHCR、Docker Hub 与 Flathub 的国内镜像
-- 预置 fcitx5-chinese-addons 与 fcits5-rime 输入法
+- 预置 fcitx5-chinese-addons 与 fcits5-rime 输入法选项
 - 默认使用本地化的 vso-china-image
 
 ## 安装方法
@@ -29,17 +29,17 @@
 
 ### 输入法
 
-安装完毕开机，设置好您的用户，选择您所需要的应用程序，等待 Vanilla OS First Setup 配置完成后，请打开 KDE 设置，找到键盘 => 虚拟键盘。
+安装完毕开机，设置好您的用户，在欢迎中心中选择您所需要的应用程序并安装。在此处，您可以选择您需要的输入法。等待欢迎中心配置完成后，请打开 KDE 设置，找到键盘 => 虚拟键盘。
 
 ![KDE Settings](images/settings.png)
 
-选择 Fcitx 5 Wayland 启动器。
+选择 Fcitx 5。
 
 之后，请搜索并打开 Fcitx 配置，选择右侧的词库/输入方式，并点击左箭头来添加到输入法列表中。
 
 该镜像预装了两种输入法：
 
-- 中文插件（fcitx5-chinese-addons）（附带维基百科词库（fcitx5-pinyin-zhwiki））：开箱即用，无须额外配置
+- 中文插件（fcitx5-chinese-addons）：开箱即用，无须额外配置
 - 中州韵（fcitx5-rime）：智能输入引擎，可以自由安装输入方案
 
 您可以按照自己的需求自行选择。如果您选择中州韵输入法，您可以在输入框中按下 Ctrl+` or F4 来切换输入方案、简繁体等。预装的朙月拼音在大多数情况下已经足够使用，您还可以安装其他输入方案，如雾凇拼音等。
