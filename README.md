@@ -6,10 +6,13 @@
 > Kipferl 镜像不由 Vanilla OS 官方维护。
 >
 > 该镜像目前仍处于开发状态，不建议在生产环境中使用。
+>
+> 在[#489](https://github.com/Vanilla-OS/vanilla-installer/pull/489)被官方合并之前，请勿将此镜像用作“初始镜像”。如要使用该镜像，请在安装官方（或本地化）镜像后使用`abroot rebase`进行变基。
 
 这些镜像基于以下镜像并行构建：
 
 - [vanilla-kde/kde](https://github.com/Vanilla-KDE/desktop-image/pkgs/container/kde) -> kde-china
+- [vanilla-kde/kde-vm](https://github.com/Vanilla-KDE/desktop-image/pkgs/container/kde-vm) -> kde-vm-china
 
 ## 所应用的更改
 
@@ -23,8 +26,13 @@
 
 要在 Vanilla OS 中使用本地化镜像，请在安装系统时选择“Install Custom Image (Advanced)”选项。之后，按照顺序设置您的语言（以中国大陆为例，选择 Chinese (Simplified)）、时区 (以中国大陆为例，选择 Shanghai)。随后，当提示输入镜像名称时，请输入以下镜像之一（以使用南京大学开源镜像站为例，也可以使用其他 GHCR 镜像）：
 
-- ghcr.nju.edu.cn/vanilla-kde/kde-china:dev *(适合多数桌面用户)*
+> [!CAUTION]
+> 在[#489](https://github.com/Vanilla-OS/vanilla-installer/pull/489)被官方合并之前，请勿将此镜像输入用作“初始镜像”。请先按照[china-image](https://github.com/Vanilla-Flavors/china-image)提供的安装指南安装完成之后，使用`abroot rebase <镜像名>`进行变基。
 
+
+- ghcr.nju.edu.cn/vanilla-kde/kde-china:dev *(适合多数桌面用户)*
+- ghcr.nju.edu.cn/vanilla-kde/kde-vm-china:dev *(适用于虚拟机)*
+- 
 如果您的 Vanilla OS 已经安装完成，请使用 `abroot rebase <镜像名>` 来应用本地化镜像。
 
 ### 输入法

@@ -34,6 +34,7 @@ jobs:
           - arm64
         image_name:
           - kde-china
+          - kde-vm-china
         include:
           - runner: ubuntu-latest
             arch: amd64
@@ -41,6 +42,8 @@ jobs:
             arch: arm64
           - base_image: ghcr.io/vanilla-kde/kde
             image_name: kde-china
+          - base_image: ghcr.io/vanilla-kde/kde-vm
+            image_name: kde-vm-china
     runs-on: ${{ matrix.runner }}
     needs: verify-image
     permissions:
