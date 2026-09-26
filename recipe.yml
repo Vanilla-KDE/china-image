@@ -27,12 +27,6 @@ stages:
     - lpkg --unlock
     - apt update
 
-  - name: patch-flatpak-first-setup-remote
-    type: shell
-    commands:
-      - flatpak remote-add --user --if-not-exists flathub https://mirror.sjtu.edu.cn/flathub/flathub.flatpakrepo
-      - flatpak remote-modify --user flathub --url=https://mirrors.cernet.edu.cn/flathub
-
   - name: cleanup
     type: shell
     commands:
