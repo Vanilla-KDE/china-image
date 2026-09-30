@@ -11,8 +11,8 @@
 
 这些镜像基于以下镜像并行构建：
 
-- [vanilla-kde/kde](https://github.com/Vanilla-KDE/desktop-image/pkgs/container/kde) -> kde-china
-- [vanilla-kde/kde-vm](https://github.com/Vanilla-KDE/desktop-image/pkgs/container/kde-vm) -> kde-vm-china
+- [vanilla-kde/plasma](https://github.com/Vanilla-KDE/desktop-image/pkgs/container/plasma) -> plasma-china
+- [vanilla-kde/plasma-vm](https://github.com/Vanilla-KDE/vm-image/pkgs/container/plasma-vm) -> plasma-vm-china
 
 ## 所应用的更改
 
@@ -30,8 +30,8 @@
 > 在[#489](https://github.com/Vanilla-OS/vanilla-installer/pull/489)被官方合并之前，请勿将此镜像输入用作“初始镜像”。请先按照[china-image](https://github.com/Vanilla-Flavors/china-image)提供的安装指南安装完成之后，使用`abroot rebase <镜像名>`进行变基。
 
 
-- ghcr.nju.edu.cn/vanilla-kde/kde-china:dev *(适合多数桌面用户)*
-- ghcr.nju.edu.cn/vanilla-kde/kde-vm-china:dev *(适用于虚拟机)*
+- ghcr.nju.edu.cn/vanilla-kde/plasma-china:dev *(适合多数桌面用户)*
+- ghcr.nju.edu.cn/vanilla-kde/plasma-vm-china:dev *(适用于虚拟机)*
 - 
 如果您的 Vanilla OS 已经安装完成，请使用 `abroot rebase <镜像名>` 来应用本地化镜像。
 

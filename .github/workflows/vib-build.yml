@@ -21,7 +21,7 @@ jobs:
     - name: Verify Base Image Integrity
       if: ${{ github.ref_type == 'tag' }}
       run:
-        gh attestation verify oci://ghcr.io/vanilla-kde/kde:latest --owner Vanilla-KDE
+        gh attestation verify oci://ghcr.io/vanilla-kde/plasma:latest --owner Vanilla-KDE
       env:
         GH_TOKEN: ${{ github.token }}
 
@@ -33,17 +33,17 @@ jobs:
           - amd64
           - arm64
         image_name:
-          - kde-china
-          - kde-vm-china
+          - plasma-china
+          - plasma-vm-china
         include:
           - runner: ubuntu-latest
             arch: amd64
           - runner: ubuntu-24.04-arm
             arch: arm64
-          - base_image: ghcr.io/vanilla-kde/kde
-            image_name: kde-china
-          - base_image: ghcr.io/vanilla-kde/kde-vm
-            image_name: kde-vm-china
+          - base_image: ghcr.io/vanilla-kde/plasma
+            image_name: plasma-china
+          - base_image: ghcr.io/vanilla-kde/plasma-vm
+            image_name: plasma-vm-china
     runs-on: ${{ matrix.runner }}
     needs: verify-image
     permissions:
@@ -152,7 +152,8 @@ jobs:
       fail-fast: false
       matrix:
         image_name:
-          - kde-china
+          - plasma-china
+          - plasma-vm-china
     permissions:
       contents: write # Allow actions to create release
       packages: write # Allow pushing images to GHCR

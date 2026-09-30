@@ -1,10 +1,10 @@
-name: Vanilla KDE China
-id: kde-china
+name: Vanilla Plasma China
+id: plasma-china
 vibversion: 1.1.0
 
 stages:
 - id: build
-  base: ghcr.io/vanilla-kde/kde:dev
+  base: ghcr.io/vanilla-kde/plasma:dev
   singlelayer: false
   labels:
     maintainer: FangcatChina
